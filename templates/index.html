@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NLP Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('/static/back.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            width: 70%;
+            max-width: 800px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.8)); /* Gradient background */
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, font-size 0.3s ease;
+        }
+        li:hover {
+            transform: scale(1.1);
+            font-size: 18px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        .card {
+            background-color: rgba(245, 245, 245, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .call-to-action {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .call-to-action:hover {
+            background-color: #0056b3;
+        }
+        .card a {
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .card a::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+        .card a:hover::before {
+            width: 200px;
+            height: 200px;
+        }
+        .card a::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+        .card a:active::after {
+            width: 300px;
+            height: 300px;
+            transition: 0s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to LexiLingo</h1>
+        <div class="card">
+            <ul>
+                <li><a href="/translation">Translation & Language Detection</a></li>
+                <li><a href="/sentiment_analysis">Sentiment Analysis</a></li>
+                <li><a href="/pos_ner">POS Tagging & NER Recognition</a></li>
+                <li><a href="/summarization">Text Summarization</a></li>
+            </ul>
+            <button class="call-to-action">Explore More</button>
+        </div>
+    </div>
+    <!-- Ensure that the path to 'hover.mp3' matches the route where Flask serves static files -->
+    <script>
+        document.querySelectorAll('.card a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                const audio = new Audio('/static/button.mp3');
+                audio.play();
+            });
+        });
+    </script>
+</body>
+</html>
