@@ -65,8 +65,6 @@ nlp-project/
 │ └── sentiment_analysis.html
 │
 ├── static/
-│ └── css/
-│ └── styles.css
 │
 ├── main.py
 ├── translation.py
@@ -76,7 +74,7 @@ nlp-project/
 
 
 - `templates/`: Contains HTML templates for the web pages.
-- `static/css/`: Contains CSS files for styling.
+- `static`: Contains CSS files for styling.
 - `main.py`: The main Flask application file.
 - `translation.py`: Contains code for translation and language detection.
 - `pos_ner.py`: Contains code for POS tagging and NER recognition.
