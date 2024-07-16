@@ -54,7 +54,7 @@ Welcome to MY PROJECT Lexilingo! This project provides several Natural Language 
 3. Use the navigation links on the homepage to access the different NLP features.
 
 ## Project Structure
-
+```
 nlp-project/
 │
 ├── templates/
@@ -72,7 +72,7 @@ nlp-project/
 ├── summarization.py
 └── sentiment_analysis.py
 
-
+```
 - `templates/`: Contains HTML templates for the web pages.
 - `static`: Contains CSS files for styling.
 - `main.py`: The main Flask application file.
