@@ -1,3 +1,4 @@
+gunicorn
 blinker==1.9.0
 breadability==0.1.20
 certifi==2024.12.14
