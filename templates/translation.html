@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translation & Language Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/back2.png'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start; /* Move container to the left */
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 70%;
+            max-width: 800px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8); /* White outer box with opacity */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+            color: #555555;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .result h3 {
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        .result p {
+            color: #555555;
+            margin: 0;
+        }
+        .home-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a class="home-button" href="/">Home</a>
+    <div class="container">
+        <h1>Translation & Language Detection</h1>
+        <form method="POST" action="/translation">
+            <label for="text">Enter Text:</label>
+            <textarea id="text" name="text" rows="4" cols="50"></textarea>
+            <label for="target_lang">Target Language:</label>
+            <input type="text" id="target_lang" name="target_lang">
+            <input type="submit" value="Translate">
+        </form>
+        {% if translated_text %}
+        <div class="result">
+            <h3>Translated Text:</h3>
+            <p>{{ translated_text }}</p>
+            <p>Detected Language: {{ detected_lang }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
